@@ -29,6 +29,5 @@ public class RecoveryProfileByPhoneNumber extends BaseTest {
         loginPage.clickRestoreProfileButton();
         recoveryAccessPage = new RecoveryAccessPageByPhone();
         recoveryAccessPage.clickRecoverAccessByPhoneButton();
-        sleep(3000);
     }
 }

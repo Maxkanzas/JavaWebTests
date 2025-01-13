@@ -30,6 +30,5 @@ public class RecoveryProfileByEmail extends BaseTest {
         loginPage.clickRestoreProfileButton();
         recoveryAccessPage = new RecoveryAccessPageByEmail();
         recoveryAccessPage.clickRecoverAccessByEmailButton();
-        sleep(3000);
     }
 }

@@ -30,6 +30,5 @@ public class RecoveryProfileBySupport extends BaseTest {
         loginPage.clickRestoreProfileButton();
         recoveryAccessPage = new RecoveryAccessPageBySupport();
         recoveryAccessPage.clickContactSupportButton();
-        sleep(3000);
     }
 }
