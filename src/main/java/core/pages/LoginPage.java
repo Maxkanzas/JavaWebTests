@@ -1,16 +1,22 @@
 package core.pages;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import core.base.BasePage;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.*;
 
 public class LoginPage extends BasePage {
     private SelenideElement userNameField = $("[name='st.email']");
     private SelenideElement passwordField = $("[name='st.password']");
-    private SelenideElement loginButton = $("[data-l='t,sign_in']");
+    private SelenideElement loginButton = $("input.button-pro.__wide[type='submit'][value='Войти в Одноклассники']");
     private SelenideElement enterQrCodeLink = $("[data-l='t,get_qr']");
     private SelenideElement forgotPasswordLink = $("[data-l='t,restore']");
     private SelenideElement registrationButton = $(".external-oauth-login-footer a.button-pro.__sec.__wide");
@@ -18,12 +24,13 @@ public class LoginPage extends BasePage {
     // Локаторы для кнопок социальных сетей
     private SelenideElement vkButton = $("[data-app-id='7525058']");
     private SelenideElement mailRuButton = $("[data-l='t,mailru']");
-    private SelenideElement googleButton = $("[data-l='t,google']");
     private SelenideElement yandexButton = $("[data-l='t,yandex']");
-    private SelenideElement appleButton = $("[data-l='t,apple']");
 
     // Локатор для элемента сообщения об ошибке ввода
     private SelenideElement errorMessage = $(".js-form-error-message");
+
+    // Локаторы для восстановления профиля
+    private SelenideElement recoveryProfileButton = $("[value='st.go_to_recovery']");
 
     {
         verifyPageElements();
@@ -38,9 +45,7 @@ public class LoginPage extends BasePage {
         registrationButton.shouldBe(visible);
         vkButton.shouldBe(visible);
         mailRuButton.shouldBe(visible);
-        googleButton.shouldBe(visible);
         yandexButton.shouldBe(visible);
-        appleButton.shouldBe(visible);
     }
     @Step("Проверяем видимость сообщения ошибки ввода")
     public boolean isErrorMessageVisible() {
@@ -66,6 +71,14 @@ public class LoginPage extends BasePage {
         passwordField.shouldBe(visible).setValue(password);
         loginButton.shouldBe(visible).click();
     }
+    @Step("Нажимаем на кнопку войти в ОК")
+    public void clickLogin() {
+        loginButton.shouldBe(visible).click();
+    }
+    @Step("Вводим пароль")
+    public void setPassword(String password) {
+        passwordField.shouldBe(visible).click();
+    }
     @Step("Переход на страницу восстановления пароля")
     public void openForgotPasswordPage() {
         forgotPasswordLink.shouldBe(visible).click();
@@ -82,17 +95,12 @@ public class LoginPage extends BasePage {
     public void mailRuButton(){
         mailRuButton.shouldBe(visible).click();
     }
-    @Step("Входим на сайт через иконку Google")
-    public void googleButton(){
-        googleButton.shouldBe(visible).click();
-    }
     @Step("Входим на сайт через иконку Yandex")
     public void yandexButton(){
         yandexButton.shouldBe(visible).click();
     }
-    @Step("Входим на сайт через иконку Apple")
-    public void appleButton(){
-        appleButton.shouldBe(visible).click();
+    @Step("Нажимаем на кнопку восстановить профиль")
+    public void clickRestoreProfileButton() {
+        recoveryProfileButton.shouldBe(visible).click();
     }
-
 }
