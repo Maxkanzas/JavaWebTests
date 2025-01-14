@@ -3,7 +3,6 @@ package tests;
 import core.base.BaseTest;
 import core.pages.LoginPage;
 import core.pages.RecoveryAccessPageByEmail;
-import core.pages.RecoveryAccessPageByPhone;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

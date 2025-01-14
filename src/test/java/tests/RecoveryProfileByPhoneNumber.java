@@ -1,4 +1,5 @@
 package tests;
+
 import core.base.BaseTest;
 import core.pages.LoginPage;
 import core.pages.RecoveryAccessPageByPhone;
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class RecoveryProfileByPhoneNumber extends BaseTest {
     private LoginPage loginPage;
     private RecoveryAccessPageByPhone recoveryAccessPage;
