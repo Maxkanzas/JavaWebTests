@@ -11,7 +11,6 @@ public class BasePage {
     protected SelenideElement headerLogo = $("[tsid='toolbar-search-input']");
     protected SelenideElement searchField = $("[name='st.query']");
     protected SelenideElement vkServices = $("[data-l='t,vk_ecosystem']");
-    protected SelenideElement acceptCookieButton = $(".cb_accept");
 
     @Step("Выполянем поиск по сайту с запросом: {query}")
     public void search(String query) {
@@ -24,9 +23,5 @@ public class BasePage {
     @Step("Кликаем на логотип ОК")
     public void clickLogo() {
         headerLogo.shouldBe(visible).click();
-    }
-    @Step("Принимаем куки")
-    public void acceptCookie() {
-        acceptCookieButton.shouldBe(visible).click();
     }
 }

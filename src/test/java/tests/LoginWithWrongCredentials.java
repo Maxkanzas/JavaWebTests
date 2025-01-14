@@ -4,7 +4,6 @@ import core.base.BaseTest;
 import core.pages.LoginPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -16,7 +15,6 @@ public class LoginWithWrongCredentials extends BaseTest {
     public void prepare() {
         open(baseUrl);
         loginPage = new LoginPage();
-        loginPage.acceptCookie();
     }
 
     @Test
