@@ -37,7 +37,7 @@ public class RecoveryProfileByPhoneNumber extends BaseTest {
         assertEquals("+7", countryCode, "Код страны не совпадаем с ожидаемым");
         recoveryAccessPageDropDown.clickGetCode();
         assertTrue(recoveryAccessPageDropDown.errorMessageVisible(), "Сообщение об ошибке не отображается");
-        String expectedErrorMessage = "Неправильно указан логин и/или пароль";
+        String expectedErrorMessage = "Неправильный номер телефона.";
         String actualErrorMessage = recoveryAccessPageDropDown.getErrorMessageText();
         assertEquals(expectedErrorMessage, actualErrorMessage, "Текст сообщения об ошибке не совпадает");
     }

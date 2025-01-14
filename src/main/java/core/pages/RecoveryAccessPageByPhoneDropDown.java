@@ -26,7 +26,6 @@ public class RecoveryAccessPageByPhoneDropDown extends BasePage {
         countrySelect.shouldBe(visible);
         recoveryPhoneInput.shouldBe(visible);
         getCode.shouldBe(visible);
-        errorMessageIncorrectNumber.shouldBe(visible);
     }
     @Step("Проверяем видимость сообщения ошибки ввода")
     public boolean errorMessageVisible() {
