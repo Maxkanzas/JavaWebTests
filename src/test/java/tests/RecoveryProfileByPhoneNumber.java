@@ -1,5 +1,4 @@
 package tests;
-
 import core.base.BaseTest;
 import core.pages.LoginPage;
 import core.pages.RecoveryAccessPageByPhone;
@@ -7,15 +6,12 @@ import core.pages.RecoveryAccessPageByPhoneDropDown;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 public class RecoveryProfileByPhoneNumber extends BaseTest {
     private LoginPage loginPage;
     private RecoveryAccessPageByPhone recoveryAccessPage;
     private RecoveryAccessPageByPhoneDropDown recoveryAccessPageDropDown;
-
     @BeforeEach
     public void prepare() {
         open(baseUrl);
