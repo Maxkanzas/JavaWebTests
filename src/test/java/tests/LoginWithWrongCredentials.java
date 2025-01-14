@@ -16,7 +16,6 @@ public class LoginWithWrongCredentials extends BaseTest {
     public void prepare() {
         open(baseUrl);
         loginPage = new LoginPage();
-        loginPage.acceptCookie();
     }
 
     @Test
