@@ -1,15 +1,14 @@
 package tests;
 
-import core.base.BaseTest;
+import core.base.TestBase;
 import core.pages.LoginPage;
 import core.pages.RecoveryAccessPageByEmail;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
 
-public class RecoveryProfileByEmail extends BaseTest {
+public class RecoveryProfileByEmail extends TestBase {
     private LoginPage loginPage;
     private RecoveryAccessPageByEmail recoveryAccessPage;
 

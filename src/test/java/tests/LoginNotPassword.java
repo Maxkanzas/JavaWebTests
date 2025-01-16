@@ -1,6 +1,6 @@
 package tests;
 
-import core.base.BaseTest;
+import core.base.TestBase;
 import core.pages.LoginPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class LoginNotPassword extends BaseTest {
+public class LoginNotPassword extends TestBase {
     private LoginPage loginPage;
 
     @BeforeEach

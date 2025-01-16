@@ -8,17 +8,9 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class RecoveryAccessPageBySupport extends BasePage {
-    // Локаторы для кнопок восстановления пароля
-    private SelenideElement supportCustomerButton = $(".support-link_item-text");
+    // Локаторы для кнопки связи со службой поддержки
+    private SelenideElement supportCustomerButton = $("[data-l='t,support']");
 
-    {
-        verifyPageElements();
-    }
-
-    @Step("Проверяем видимость всех элементов страницы")
-    public void verifyPageElements() {
-        supportCustomerButton.shouldBe(visible);
-    }
     @Step("Нажимаем на кнопку обратиться в службу поддержки")
     public void clickContactSupportButton() {
         supportCustomerButton.shouldBe(visible).click();
