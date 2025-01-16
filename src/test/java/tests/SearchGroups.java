@@ -26,7 +26,7 @@ public class SearchGroups extends TestBase {
         step("В поисковой строке вводим тестировщик", ()->{
             basePage.setInputSearchField("Тестировщик");
         });
-        step("Выбираем вкладку тестировщик", ()->{
+        step("Выбираем вкладку тестировщик и кликаем на нее", ()->{
             basePage.setDropDownMenuVisible();
             basePage.selectValue("Тестировщик");
         });
