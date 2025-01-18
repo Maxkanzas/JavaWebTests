@@ -9,7 +9,7 @@ import java.util.Properties;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
-public class BaseTest {
+public class TestBase {
     protected static String baseUrl;
 
     @BeforeEach
@@ -25,7 +25,7 @@ public class BaseTest {
         String configFileName = "application-" + environment + ".properties";
 
         Properties properties = new Properties();
-        try (InputStream input = BaseTest.class.getClassLoader().getResourceAsStream(configFileName)) {
+        try (InputStream input = TestBase.class.getClassLoader().getResourceAsStream(configFileName)) {
             if (input == null) {
                 throw new IllegalStateException("Configuration file not found: " + configFileName);
             }

@@ -17,7 +17,7 @@ public class LoginPage extends BasePage {
     private SelenideElement userNameField = $("[name='st.email']");
     private SelenideElement passwordField = $("[name='st.password']");
     private SelenideElement loginButton = $("input.button-pro.__wide[type='submit'][value='Войти в Одноклассники']");
-    private SelenideElement enterQrCodeLink = $("[data-l='t,get_qr']");
+    private SelenideElement enterQrCodeLink = $(".qr-code-button");
     private SelenideElement forgotPasswordLink = $("[data-l='t,restore']");
     private SelenideElement registrationButton = $(".external-oauth-login-footer a.button-pro.__sec.__wide");
 
@@ -28,6 +28,9 @@ public class LoginPage extends BasePage {
 
     // Локатор для элемента сообщения об ошибке ввода
     private SelenideElement errorMessage = $(".js-form-error-message");
+
+    // Локатор для обращения в службу поддержки
+    private SelenideElement supportButton = $(".recovery-link");
 
     // Локаторы для восстановления профиля
     private SelenideElement recoveryProfileButton = $("[value='st.go_to_recovery']");
@@ -46,6 +49,7 @@ public class LoginPage extends BasePage {
         vkButton.shouldBe(visible);
         mailRuButton.shouldBe(visible);
         yandexButton.shouldBe(visible);
+        supportButton.shouldBe(visible);
     }
     @Step("Проверяем видимость сообщения ошибки ввода")
     public boolean isErrorMessageVisible() {
@@ -75,9 +79,17 @@ public class LoginPage extends BasePage {
     public void clickLogin() {
         loginButton.shouldBe(visible).click();
     }
+    @Step("Нажимаем на кнопку не получается войти")
+    public void clickSupport() {
+        supportButton.shouldBe(visible).click();
+    }
     @Step("Вводим пароль")
     public void setPassword(String password) {
         passwordField.shouldBe(visible).click();
+    }
+    @Step("Нажимаем на кнопку вход по QR-коду")
+    public void loginByQrCode() {
+        enterQrCodeLink.shouldBe(visible).click();
     }
     @Step("Переход на страницу восстановления пароля")
     public void openForgotPasswordPage() {
