@@ -1,6 +1,6 @@
 package core.base;
 
-import com.codeborne.selenide.Configuration;
+import core.base.web.WebTestBase;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -9,23 +9,21 @@ import java.util.Properties;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
-public class TestBase {
+public class AbstractBaseTest {
     protected static String baseUrl;
 
     @BeforeEach
     public void setUp() {
         baseUrl = determineBaseUrl();
-        Configuration.browser = "chrome";
-        Configuration.browserSize = "1920x1080";
-        Configuration.pageLoadStrategy = "eager";
+        configure();
     }
-
+    protected void configure() {};
     private static String determineBaseUrl() {
         String environment = System.getProperty("env", "test");
         String configFileName = "application-" + environment + ".properties";
 
         Properties properties = new Properties();
-        try (InputStream input = TestBase.class.getClassLoader().getResourceAsStream(configFileName)) {
+        try (InputStream input = WebTestBase.class.getClassLoader().getResourceAsStream(configFileName)) {
             if (input == null) {
                 throw new IllegalStateException("Configuration file not found: " + configFileName);
             }
@@ -34,9 +32,6 @@ public class TestBase {
             throw new IllegalStateException("Unable to load configuration file: " + configFileName, e);
         }
         return properties.getProperty("baseUrl");
-    }
-    public String getBaseUrl() {
-        return baseUrl;
     }
     @AfterEach
     public void tearDown() {

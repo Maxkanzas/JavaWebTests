@@ -1,21 +1,21 @@
-package tests;
+package tests.web;
 
-import core.base.TestBase;
-import core.pages.LoginPage;
-import core.pages.RecoveryAccessPageByEmail;
+import core.base.web.WebTestBase;
+import core.pages.web.LoginPageWeb;
+import core.pages.web.RecoveryAccessPageByEmailWeb;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class RecoveryProfileByEmail extends TestBase {
-    private LoginPage loginPage;
-    private RecoveryAccessPageByEmail recoveryAccessPage;
+public class RecoveryProfileByEmailTests extends WebTestBase {
+    private LoginPageWeb loginPage;
+    private RecoveryAccessPageByEmailWeb recoveryAccessPage;
 
     @BeforeEach
     public void prepare() {
         open(baseUrl);
-        loginPage = new LoginPage();
+        loginPage = new LoginPageWeb();
     }
     @Test
     public void RecoveryProfileByEmailTest() {
@@ -26,7 +26,7 @@ public class RecoveryProfileByEmail extends TestBase {
             loginPage.loginNotUserName("1");
         }
         loginPage.clickRestoreProfileButton();
-        recoveryAccessPage = new RecoveryAccessPageByEmail();
+        recoveryAccessPage = new RecoveryAccessPageByEmailWeb();
         recoveryAccessPage.clickRecoverAccessByEmailButton();
     }
 }

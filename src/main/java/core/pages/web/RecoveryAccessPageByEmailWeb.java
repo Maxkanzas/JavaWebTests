@@ -1,12 +1,12 @@
-package core.pages;
+package core.pages.web;
 
 import com.codeborne.selenide.SelenideElement;
-import core.base.BasePage;
+import core.base.web.WebBasePage;
 import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
-public class RecoveryAccessPageByEmail extends BasePage {
+public class RecoveryAccessPageByEmailWeb extends WebBasePage {
     // Локаторы для кнопок восстановления пароля
     private SelenideElement recoveryByEmailButton = $("[data-l='t,email']");
 
