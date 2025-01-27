@@ -10,7 +10,6 @@ import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@Tag("regress")
 public class RecoveryProfileByPhoneNumberMobTests extends MobTestBase {
     private MobStartPage mobStartPage;
     private MobLoginPage mobLoginPage;

@@ -5,6 +5,7 @@ import core.pages.web.LoginPageWeb;
 import core.pages.web.RecoveryAccessPageByPhoneWeb;
 import core.pages.web.RecoveryAccessPageByPhoneDropDownWeb;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -19,6 +20,7 @@ public class RecoveryProfileByPhoneNumberTests extends WebTestBase {
         open(baseUrl);
         loginPage = new LoginPageWeb();
     }
+    @Tag("regress")
     @Test
     public void RecoveryProfileByPhoneNumberTest() {
         // Вход с неправильными данными
