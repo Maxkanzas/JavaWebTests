@@ -18,18 +18,22 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class MobStartPage extends MobBasePage {
     private SelenideElement loginButton = $("[name='loginButton']");
     private SelenideElement regButton = $("[name='registerButton']");
+
     {
         verifyPageElements();
     }
-    @Step ("Проверяем видимость всех элементов страницы")
+
+    @Step("Проверяем видимость всех элементов страницы")
     public void verifyPageElements() {
         loginButton.shouldBe(visible);
         regButton.shouldBe(visible);
     }
+
     @Step("Кликаем на кнопку Войти")
     public void clickLoginButton() {
         loginButton.click();
     }
+
     @Step("Кликаем на кнопку Зарегистрироваться")
     public void clickRegButton() {
         regButton.click();
