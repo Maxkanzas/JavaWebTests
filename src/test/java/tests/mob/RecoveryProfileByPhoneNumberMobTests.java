@@ -3,12 +3,14 @@ package tests.mob;
 import core.base.mob.MobTestBase;
 import core.pages.mob.*;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Tag("regress")
 public class RecoveryProfileByPhoneNumberMobTests extends MobTestBase {
     private MobStartPage mobStartPage;
     private MobLoginPage mobLoginPage;

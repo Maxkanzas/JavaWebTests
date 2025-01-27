@@ -20,22 +20,27 @@ public class WebBasePage {
     public void clickInputSearchField() {
         inputSearchField.shouldBe(visible).click();
     }
+
     @Step("Выполянем поиск по сайту с запросом: {query}")
     public void setInputSearchField(String query) {
         inputSearchField.shouldBe(visible).setValue(query);
     }
+
     @Step("Ожидание появления выпадающего меню с результатами")
     public void setDropDownMenuVisible() {
         dropDownMenu.shouldBe(Condition.visible).shouldHave(Condition.text("Тестировщик"));
     }
+
     @Step("Выбираем вкладку {тестировщик} из выпадающего списка и переходим на страницу со списком групп")
     public void selectValue(String value) {
         dropDownMenu.$(Selectors.byText(value)).click();
     }
-    @Step ("Открываем VK services")
+
+    @Step("Открываем VK services")
     public void openVkServices() {
         vkServices.shouldBe(visible).click();
     }
+
     @Step("Кликаем на логотип ОК")
     public void clickLogo() {
         headerLogo.shouldBe(visible).click();
