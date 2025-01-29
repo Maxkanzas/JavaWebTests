@@ -11,6 +11,15 @@ public class MobRecoveryAccessPageByEmail {
     private SelenideElement getCodeButton = $("#reg_email_button");
     private SelenideElement errorMessage = $(".field_error-descr[for='field_email']");
 
+    {
+        verifyPageElements();
+    }
+    @Step ("Проверяем видимость всех элементов страницы")
+    public void verifyPageElements() {
+        inputField.shouldBe(visible);
+        getCodeButton.shouldBe(visible);
+    }
+
     @Step("Кликаем на кнопку получить код")
     public void clickGetCode() {
         getCodeButton.shouldBe(visible).click();

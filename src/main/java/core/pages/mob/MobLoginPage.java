@@ -19,6 +19,16 @@ public class MobLoginPage extends MobBasePage {
     private SelenideElement errorMessage = $("#ferr");
     private SelenideElement validationTextPassword = $(".field_error-descr[for='field_password']");
     private SelenideElement validationTextUserName = $(".field_error-descr[for='field_login']");
+    {
+        verifyPageElements();
+    }
+    @Step ("Проверяем видимость всех элементов страницы")
+    public void verifyPageElements() {
+        userNameField.shouldBe(visible);
+        passwordField.shouldBe(visible);
+        loginButton.shouldBe(visible);
+        forgotLink.shouldBe(visible);
+    }
 
     @Step("Входим на сайт с логином и паролем")
     public void login(String userName, String password) {

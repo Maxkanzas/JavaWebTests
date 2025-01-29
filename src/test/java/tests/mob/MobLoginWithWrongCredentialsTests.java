@@ -18,16 +18,16 @@ public class MobLoginWithWrongCredentialsTests extends MobTestBase {
     @BeforeEach
     public void prepare() {
         open(baseUrl);
-        mobStartPage = new MobStartPage();
-        mobLoginPage = new MobLoginPage();
     }
 
     @Test
     public void loginWithWrongCredentialsTest() {
         step("Переходим на страницу авторизации", () -> {
+            mobStartPage = new MobStartPage();
             mobStartPage.clickLoginButton();
         });
         step("Авторизация с некорректными данными", () -> {
+            mobLoginPage = new MobLoginPage();
             mobLoginPage.login("IncorrectUserName", "IncorrectPassword");
         });
         step("Проверка появления сообщения об ошибке", () -> {

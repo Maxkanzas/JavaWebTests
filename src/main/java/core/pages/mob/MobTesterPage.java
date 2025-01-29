@@ -9,6 +9,14 @@ import static com.codeborne.selenide.Selenide.$;
 public class MobTesterPage {
     protected SelenideElement listGroups = $("#searchableListContent");
 
+    {
+        verifyPageElements();
+    }
+    @Step ("Проверяем видимость всех элементов страницы")
+    public void verifyPageElements() {
+        listGroups.shouldBe(visible);
+    }
+
     @Step("Проверяем, что список групп открылся")
     public void checkListGroupsSuccess() {
         listGroups.shouldBe(visible);

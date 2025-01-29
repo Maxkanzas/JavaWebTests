@@ -15,15 +15,15 @@ public class MobRecoveryProfileByEmailTests extends MobTestBase {
     @BeforeEach
     public void prepare() {
         open(baseUrl);
-        mobStartPage = new MobStartPage();
-        mobLoginPage = new MobLoginPage();
     }
     @Test
     public void RecoveryProfileByEmailTest() {
         step("Переходим на страницу авторизации", () -> {
+            mobStartPage = new MobStartPage();
             mobStartPage.clickLoginButton();
         });
         step("Авторизация с некорректными данными", () -> {
+            mobLoginPage = new MobLoginPage();
             mobLoginPage.login("IncorrectUserName", "IncorrectPassword");
             for (int i = 0; i < 2; i++) {
                 mobLoginPage.loginNotUserName("IncorrectPassword");

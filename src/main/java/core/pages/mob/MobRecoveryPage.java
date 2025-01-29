@@ -9,6 +9,15 @@ public class MobRecoveryPage {
     private SelenideElement closeButton = $("[name='return']");
     private SelenideElement recoveryButton = $("[name='restore']");
 
+    {
+        verifyPageElements();
+    }
+    @Step ("Проверяем видимость всех элементов страницы")
+    public void verifyPageElements() {
+        closeButton.shouldBe(visible);
+        recoveryButton.shouldBe(visible);
+    }
+
     @Step("Нажимаем на кнопку закрыть")
     public void closeRecovery() {
         closeButton.shouldBe(visible).click();

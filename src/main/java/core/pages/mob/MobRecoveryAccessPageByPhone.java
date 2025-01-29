@@ -12,6 +12,16 @@ public class MobRecoveryAccessPageByPhone {
     private SelenideElement countryButton = $("#countryName");
     private SelenideElement errorMessage = $(".field_error-descr[for='field_phone']");
 
+    {
+        verifyPageElements();
+    }
+    @Step ("Проверяем видимость всех элементов страницы")
+    public void verifyPageElements() {
+        inputField.shouldBe(visible);
+        getCodeButton.shouldBe(visible);
+        countryButton.shouldBe(visible);
+    }
+
     @Step("Проверяем видимость сообщения ошибки ввода")
     public boolean errorMessageVisible() {
         return errorMessage.shouldBe(visible).exists();

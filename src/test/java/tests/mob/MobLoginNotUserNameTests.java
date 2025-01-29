@@ -18,16 +18,16 @@ public class MobLoginNotUserNameTests extends MobTestBase {
     @BeforeEach
     public void prepare() {
         open(baseUrl);
-        mobStartPage = new MobStartPage();
-        mobLoginPage = new MobLoginPage();
     }
 
     @Test
     public void loginNotUserNameTest() {
         step("Переходим на страницу авторизации", () -> {
+            mobStartPage = new MobStartPage();
             mobStartPage.clickLoginButton();
         });
         step("Авторизация без ввода логина", () -> {
+            mobLoginPage = new MobLoginPage();
             mobLoginPage.loginNotUserName("IncorrectPassword");
         });
         step("Проверка появления сообщения валидации под полем логин", () -> {

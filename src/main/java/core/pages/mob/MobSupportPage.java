@@ -15,6 +15,15 @@ public class MobSupportPage extends MobBasePage {
     // Локатор для кнопки "Да", после закрытия чата
     private SelenideElement confirmCloseButton = $$(".item__1ejp4 button").get(0);
 
+    {
+        verifyPageElements();
+    }
+    @Step ("Проверяем видимость всех элементов страницы")
+    public void verifyPageElements() {
+        chatWindow.shouldBe(visible);
+        chatCloseButton.shouldBe(visible);
+    }
+
     @Step("Проверяем наличие окна с обращением")
     public boolean chatWindowIsPresent() {
         return chatWindow.shouldBe(visible).exists();

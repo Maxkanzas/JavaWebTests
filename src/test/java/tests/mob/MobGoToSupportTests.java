@@ -18,29 +18,29 @@ public class MobGoToSupportTests extends MobTestBase {
     @BeforeEach
     public void prepare() {
         open(baseUrl);
-        mobStartPage = new MobStartPage();
-        mobLoginPage = new MobLoginPage();
-        mobRecoveryPage = new MobRecoveryPage();
-        mobRecoveryAccessPage = new MobRecoveryAccessPage();
-        mobSupportPage = new MobSupportPage();
     }
     @Test
     public void GoToSupportTest() {
         step("Переходим на страницу авторизации", () -> {
+            mobStartPage = new MobStartPage();
             mobStartPage.clickLoginButton();
         });
         step("Авторизация с некорректными данными", () -> {
             for (int i = 0; i < 3; i++) {
+                mobLoginPage = new MobLoginPage();
                 mobLoginPage.login("IncorrectUserName", "IncorrectPassword");
             }
         });
         step("Переходим на общую страницу восстановления доступа", () -> {
+            mobRecoveryPage = new MobRecoveryPage();
             mobRecoveryPage.clickRecoverButton();
         });
         step("Переходим на страницу службы поддержки", () -> {
+            mobRecoveryAccessPage = new MobRecoveryAccessPage();
             mobRecoveryAccessPage.clickToSupportButton();
         });
         step("Проверяем видимость окна с обращением", ()->{
+            mobSupportPage = new MobSupportPage();
             mobSupportPage.chatWindowIsPresent();
         });
         step("Закрываем окно с чатом", ()->{

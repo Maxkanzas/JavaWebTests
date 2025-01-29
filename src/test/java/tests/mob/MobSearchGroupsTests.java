@@ -19,20 +19,19 @@ public class MobSearchGroupsTests extends MobTestBase {
     @BeforeEach
     public void prepare() {
         open(baseUrl);
-        mobStartPage = new MobStartPage();
-        mobBasePage = new MobBasePage();
-        mobSearchPage = new MobSearchPage();
-        mobTesterPage = new MobTesterPage();
     }
     @Test
     public void SearchGroupsTest() {
         step("Переходим на страницу авторизации", () -> {
+            mobStartPage = new MobStartPage();
             mobStartPage.clickLoginButton();
         });
         step("Кликнуть на лупу поиска", () -> {
+            mobBasePage = new MobBasePage();
             mobBasePage.clickSearchButton();
         });
         step("В поле поиска ввести слово тестировщик", () -> {
+            mobSearchPage = new MobSearchPage();
             mobSearchPage.clickSearchField();
             mobSearchPage.clickLoginButton("Тестировщик");
         });
@@ -40,6 +39,7 @@ public class MobSearchGroupsTests extends MobTestBase {
             mobSearchPage.setDropDownMenuVisible();
         });
         step("Проверяем открытый список поиска", () -> {
+            mobTesterPage = new MobTesterPage();
             mobTesterPage.checkListGroupsSuccess();
         });
     }

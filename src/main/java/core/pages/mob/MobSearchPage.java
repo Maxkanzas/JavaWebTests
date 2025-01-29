@@ -18,6 +18,19 @@ public class MobSearchPage extends MobStartPage {
     private SelenideElement groupsButton = $("a.data-log-click[href*='groups']");
     private SelenideElement dropDownMenu = $("#search-all_items");
 
+    {
+        verifyPageElements();
+    }
+    @Step ("Проверяем видимость всех элементов страницы")
+    public void verifyPageElements() {
+        searchField.shouldBe(visible);
+        hobbyButton.shouldBe(visible);
+        profileButton.shouldBe(visible);
+        videoButton.shouldBe(visible);
+        publicationButton.shouldBe(visible);
+        groupsButton.shouldBe(visible);
+    }
+
     @Step("Кликаем на поле поиска")
     public void clickSearchField() {
         searchField.click();
