@@ -61,7 +61,7 @@ public class RecoveryProfileByPhoneNumberMobTests extends MobTestBase {
         });
         step("Авторизация с некорректными данными", () -> {
             for (int i = 0; i < 3; i++) {
-                mobStartPage = new MobStartPage();
+                mobLoginPage = new MobLoginPage();
                 mobLoginPage.login("IncorrectUserName", "IncorrectPassword");
             }
         });

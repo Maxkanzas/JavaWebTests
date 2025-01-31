@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MobSupportPage extends MobBasePage {
-    private SelenideElement chatWindow = $(".content-wrapper__n9ga2");
+    private SelenideElement messageSupport = $(".header__tndfc");
     // Локатор для закрытия чата "крестик"
     private SelenideElement chatCloseButton = $(".button-icon__tndfc");
     // Локатор для кнопки "Да", после закрытия чата
@@ -20,13 +20,13 @@ public class MobSupportPage extends MobBasePage {
     }
     @Step ("Проверяем видимость всех элементов страницы")
     public void verifyPageElements() {
-        chatWindow.shouldBe(visible);
+        messageSupport.shouldBe(visible);
         chatCloseButton.shouldBe(visible);
     }
 
-    @Step("Проверяем наличие окна с обращением")
-    public boolean chatWindowIsPresent() {
-        return chatWindow.shouldBe(visible).exists();
+    @Step("Проверяем наличие сообщения службы поддержки")
+    public boolean checkMessageSupport() {
+        return messageSupport.exists();
     }
     @Step("Нажимаем на крестик у чата")
     public void closeChat() {

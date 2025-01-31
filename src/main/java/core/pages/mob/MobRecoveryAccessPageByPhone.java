@@ -1,12 +1,13 @@
 package core.pages.mob;
 
 import com.codeborne.selenide.SelenideElement;
+import core.base.mob.MobBasePage;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
-public class MobRecoveryAccessPageByPhone {
+public class MobRecoveryAccessPageByPhone extends MobBasePage {
     private SelenideElement inputField = $("#field_phone");
     private SelenideElement getCodeButton = $("#getCode");
     private SelenideElement countryButton = $("#countryName");

@@ -31,9 +31,10 @@ public class MobSearchGroupsTests extends MobTestBase {
             mobBasePage.clickSearchButton();
         });
         step("В поле поиска ввести слово тестировщик", () -> {
+            mobBasePage = new MobBasePage();
+            mobBasePage.clickSearchButton();
             mobSearchPage = new MobSearchPage();
-            mobSearchPage.clickSearchField();
-            mobSearchPage.clickLoginButton("Тестировщик");
+            mobSearchPage.inputFieldText("Тестировщик");
         });
         step("Выбираем вкладку тестировщик и кликаем на нее", () -> {
             mobSearchPage.setDropDownMenuVisible();

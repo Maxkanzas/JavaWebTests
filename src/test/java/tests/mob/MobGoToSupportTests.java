@@ -41,7 +41,7 @@ public class MobGoToSupportTests extends MobTestBase {
         });
         step("Проверяем видимость окна с обращением", ()->{
             mobSupportPage = new MobSupportPage();
-            mobSupportPage.chatWindowIsPresent();
+            mobSupportPage.checkMessageSupport();
         });
         step("Закрываем окно с чатом", ()->{
             mobSupportPage.closeChat();
