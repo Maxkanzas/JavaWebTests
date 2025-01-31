@@ -10,7 +10,7 @@ import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class MobRecoveryProfileByEmailMobTests extends MobTestBase {
+public class MobRecoveryProfileByEmailMobTest extends MobTestBase {
     private MobStartPage mobStartPage;
     private MobLoginPage mobLoginPage;
     private MobRecoveryPage mobRecoveryPage;

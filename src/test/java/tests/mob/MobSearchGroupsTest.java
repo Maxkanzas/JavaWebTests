@@ -7,10 +7,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
-public class MobSearchGroupsTests extends MobTestBase {
+public class MobSearchGroupsTest extends MobTestBase {
     private MobBasePage mobBasePage;
     private MobStartPage mobStartPage;
     private MobSearchPage mobSearchPage;

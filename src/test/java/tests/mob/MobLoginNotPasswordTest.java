@@ -11,7 +11,7 @@ import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class MobLoginNotUserNameTests extends MobTestBase {
+public class MobLoginNotPasswordTest extends MobTestBase {
     private MobStartPage mobStartPage;
     private MobLoginPage mobLoginPage;
 
@@ -21,21 +21,21 @@ public class MobLoginNotUserNameTests extends MobTestBase {
     }
 
     @Test
-    public void loginNotUserNameTest() {
+    public void loginNotPasswordTest() {
         step("Переходим на страницу авторизации", () -> {
             mobStartPage = new MobStartPage();
             mobStartPage.clickLoginButton();
         });
-        step("Авторизация без ввода логина", () -> {
+        step("Авторизация без ввода пароля", () -> {
             mobLoginPage = new MobLoginPage();
-            mobLoginPage.loginNotUserName("IncorrectPassword");
+            mobLoginPage.loginNotPassword("IncorrectUserName");
         });
-        step("Проверка появления сообщения валидации под полем логин", () -> {
-            assertTrue(mobLoginPage.validationTextLoginVisible(), "Сообщение о валидации не отображается");
+        step("Проверка появления сообщения валидации под полем пароль", () -> {
+            assertTrue(mobLoginPage.validationTextPasswordVisible(), "Сообщение о валидации не отображается");
         });
         step("Проверка текста сообщения валидации под полем пароль", () -> {
-            String expectedTextMessage = "Укажите логин";
-            String actualTextMessage = mobLoginPage.getValidationLoginText();
+            String expectedTextMessage = "Укажите пароль";
+            String actualTextMessage = mobLoginPage.getValidationPasswordText();
             assertEquals(expectedTextMessage, actualTextMessage, "Текст сообщения не совпадает");
         });
     }

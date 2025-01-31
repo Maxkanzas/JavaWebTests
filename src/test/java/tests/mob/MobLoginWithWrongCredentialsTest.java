@@ -11,7 +11,7 @@ import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class MobLoginWithWrongCredentialsTests extends MobTestBase {
+public class MobLoginWithWrongCredentialsTest extends MobTestBase {
     private MobStartPage mobStartPage;
     private MobLoginPage mobLoginPage;
 

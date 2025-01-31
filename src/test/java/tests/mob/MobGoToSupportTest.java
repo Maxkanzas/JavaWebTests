@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
-public class MobGoToSupportTests extends MobTestBase {
+public class MobGoToSupportTest extends MobTestBase {
     private MobStartPage mobStartPage;
     private MobLoginPage mobLoginPage;
     private MobRecoveryPage mobRecoveryPage;
