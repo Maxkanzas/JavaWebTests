@@ -1,19 +1,13 @@
-package core.pages;
+package core.pages.web;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import core.base.BasePage;
+import core.base.web.WebBasePage;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class LoginPage extends BasePage {
+public class LoginPageWeb extends WebBasePage {
     private SelenideElement userNameField = $("[name='st.email']");
     private SelenideElement passwordField = $("[name='st.password']");
     private SelenideElement loginButton = $("input.button-pro.__wide[type='submit'][value='Войти в Одноклассники']");
